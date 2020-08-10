@@ -83,16 +83,20 @@ function display(){
 function active(a){
    remove()
    a.classList.add("active")
-
+   check()
    function check(){
-      for(var i=0; i<allQuestions.length; i++){
-      if(a.innerHTML === allQuestions[i].answer){  
-            score += 10
+      if((a.innerHTML === allQuestions[0].answer) && (score == 0)){
+         score += 10
       }
-     
-   }
+      else if((a.innerHTML === allQuestions[1].answer) && (score == 10 || score == 0)){
+         score += 10
+      }
+      else if((a.innerHTML === allQuestions[2].answer) && (score == 20 || score == 10 || score == 0)){
+         score += 10
+      }
+   
 }
-check()
+
 }
 
 
